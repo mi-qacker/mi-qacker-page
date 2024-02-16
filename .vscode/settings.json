@@ -1,0 +1,4 @@
+{
+	"workbench.colorTheme": "Default Dark Modern",
+	"stylelint.validate": ["html", "vue", "css"]
+}

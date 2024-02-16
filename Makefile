@@ -1,16 +1,21 @@
+RUNNER := yarn
+
 dev:
-	yarn dev
+	$(RUNNER) dev
 
 buid:
-	yarn build
+	$(RUNNER) build
+
+test:
+	$(RUNNER) vitest run
 
 lint: prettier lint-eslint lint-stylelint
 
 lint-eslint:
-	yarn eslint . --ext .js,.jsx,.ts,.tsx,.vue
+	$(RUNNER) eslint . --ext .js,.jsx,.ts,.tsx,.vue
 
 lint-stylelint:
-	yarn stylelint "**/*.{css,vue,html}"
+	$(RUNNER) stylelint "**/*.{css,vue,html}"
 
 prettier:
-	yarn prettier . --check
+	$(RUNNER) prettier . --check

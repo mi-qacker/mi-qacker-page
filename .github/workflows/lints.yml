@@ -1,0 +1,21 @@
+name: Run lints
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  lints:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3 #Setup Node
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Run lints
+        run: |
+          yarn
+          make lint

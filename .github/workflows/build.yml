@@ -14,6 +14,6 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: yarn
-      - run: make build
-      - run: make lint
-      - run: make test
+      - run: yarn build
+      - run: yarn lint
+      - run: yarn test

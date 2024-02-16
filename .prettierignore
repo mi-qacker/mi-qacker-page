@@ -1,0 +1,8 @@
+.vscode
+
+dist
+public
+
+node_modules
+package.json
+yarn.lock

@@ -1,4 +1,4 @@
-name: Run lints
+name: Run tests and lints
 on:
   push:
     branches: [main]
@@ -15,7 +15,12 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'yarn'
 
-      - name: Run lints
+      - name: Install dependencies
         run: |
           yarn
+      - name: Run lints
+        run: |
           make lint
+      - name: Run tests
+        run: |
+          make test

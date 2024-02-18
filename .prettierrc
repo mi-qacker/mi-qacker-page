@@ -7,5 +7,6 @@
 	"quoteProps": "consistent",
 	"bracketSpacing": false,
 	"bracketSameLine": true,
-	"arrowParens": "always"
+	"arrowParens": "always",
+	"plugins": ["prettier-plugin-tailwindcss"]
 }

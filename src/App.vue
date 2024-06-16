@@ -1,5 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NavbarPanel from './components/NavbarPanel.vue';
+</script>
 
 <template>
-	<h1>Hello world!</h1>
+	<NavbarPanel />
+	<main class="container mx-auto">
+		<RouterView />
+	</main>
 </template>

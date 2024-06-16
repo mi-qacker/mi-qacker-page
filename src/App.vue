@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import {RouterLink} from 'vue-router';
+import NavbarPanel from './components/NavbarPanel.vue';
 </script>
 
 <template>
-	<nav>
-		<RouterLink to="/">home</RouterLink>
-		<RouterLink to="/features">features</RouterLink>
-		<RouterLink to="/about">about</RouterLink>
-	</nav>
-	<main>
-		<RouterView></RouterView>
+	<NavbarPanel />
+	<main class="container mx-auto">
+		<RouterView />
 	</main>
 </template>

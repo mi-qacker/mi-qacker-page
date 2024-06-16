@@ -1,5 +1,21 @@
 <script setup lang="ts">
-// TODO: make lists dynamic
+import {ref, computed} from 'vue';
+
+type Contact = {
+	id: string;
+	name: string;
+	link: string;
+	category: 'social' | 'messenger';
+};
+
+const contacts = ref<Contact[]>([
+	{id: 'github', name: 'GitHub', category: 'social', link: 'https://github.com/mi-qacker'},
+	{id: 'linkedin', name: 'LinkedIn', category: 'social', link: 'https://www.linkedin.com/in/matthewkalinin'},
+	{id: 'telegram', name: 'Telegram channel', category: 'social', link: 'https://t.me/+VIbMx3rTvFozYWIy'},
+	{id: 'telegram', name: 'Telegram', category: 'messenger', link: 'https://t.me/matthewkalinin'},
+]);
+const social = computed(() => contacts.value.filter(({category}) => category === 'social'));
+const messenger = computed(() => contacts.value.filter(({category}) => category === 'messenger'));
 </script>
 
 <template>
@@ -16,25 +32,25 @@
 
 		<h3 class="text-lg">Social network:</h3>
 		<ul class="flex list-inside gap-2">
-			<li class="ml-2 flex items-center gap-2">
-				<img src="https://cdn.simpleicons.org/github/white" alt="github logo" height="24" width="24" />
-				<a class="underline" href="https://github.com/mi-qacker" target="_blank">GitHub</a>
-			</li>
-			<li class="ml-2 flex items-center gap-2">
-				<img src="https://cdn.simpleicons.org/linkedin/white" alt="github logo" height="24" width="24" />
-				<a class="underline" href="https://www.linkedin.com/in/matthewkalinin/" target="_blank">LinkedIn</a>
-			</li>
-			<li class="ml-2 flex items-center gap-2">
-				<img src="https://cdn.simpleicons.org/telegram/white" alt="github logo" height="24" width="24" />
-				<a class="underline" href="https://t.me/+VIbMx3rTvFozYWIy" target="_blank">Telegram channel</a>
+			<li class="ml-2 flex items-center gap-2" v-for="contact in social" :key="contact.id">
+				<img
+					:src="`https://cdn.simpleicons.org/${contact.id}/white`"
+					:alt="`${contact.id} logo`"
+					height="24"
+					width="24" />
+				<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 			</li>
 		</ul>
 
 		<h3 class="text-lg">Messengers:</h3>
 		<ul class="flex list-inside gap-2">
-			<li class="ml-2 flex items-center gap-2">
-				<img src="https://cdn.simpleicons.org/telegram/white" alt="github logo" height="24" width="24" />
-				<a class="underline" href="https://t.me/matthewkalinin" target="_blank">Telegram</a>
+			<li class="ml-2 flex items-center gap-2" v-for="contact in messenger" :key="contact.id">
+				<img
+					:src="`https://cdn.simpleicons.org/${contact.id}/white`"
+					:alt="`${contact.id} logo`"
+					height="24"
+					width="24" />
+				<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 			</li>
 		</ul>
 	</section>

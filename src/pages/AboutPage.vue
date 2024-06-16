@@ -24,8 +24,8 @@
 		<h2 class="mb-2 text-xl font-bold">My hobbies</h2>
 		<p>
 			As a hobby, I like to play computer games (check my
-			<a href="https://steamcommunity.com/id/metthew44/" target="_blank">steam</a>), I am fond of cars and music. I also
-			like to do programming (unexpectedly) and other nerdy things.
+			<a class="underline" href="https://steamcommunity.com/id/metthew44/" target="_blank">steam</a>), I am fond of cars
+			and music. I also like to do programming (unexpectedly) and other nerdy things.
 		</p>
 	</section>
 </template>

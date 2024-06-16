@@ -19,18 +19,18 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 </script>
 
 <template>
-	<header>
+	<header class="my-4">
 		<h1 class="text-2xl font-bold">Contact me</h1>
 		<p>If you want to discuss it, I will be glad to reply to your messages</p>
 	</header>
 
-	<section>
-		<h2 class="text-xl font-bold">Contacts</h2>
+	<section class="mb-4">
+		<h2 class="mb-2 text-xl font-bold">Contacts</h2>
 
 		<h3 class="text-lg">Email:</h3>
 		<p><a class="underline" href="mailto:matvey.kalinin2001@gmail.com">matvey.kalinin2001@gmail.com</a></p>
 
-		<h3 class="text-lg">Social network:</h3>
+		<h3 class="my-2 text-lg">Social network:</h3>
 		<ul class="flex list-inside gap-2">
 			<li class="ml-2 flex items-center gap-2" v-for="contact in social" :key="contact.id">
 				<img
@@ -42,7 +42,7 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 			</li>
 		</ul>
 
-		<h3 class="text-lg">Messengers:</h3>
+		<h3 class="my-2 text-lg">Messengers:</h3>
 		<ul class="flex list-inside gap-2">
 			<li class="ml-2 flex items-center gap-2" v-for="contact in messenger" :key="contact.id">
 				<img

@@ -1,7 +1,8 @@
 name: Upload static
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: [CI Checks]
+    types: [completed]
 jobs:
   build:
     runs-on: ubuntu-latest

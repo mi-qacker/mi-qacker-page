@@ -1,8 +1,6 @@
 name: Upload static
 on:
-  workflow_run:
-    workflows: [CI Checks]
-    types: [completed]
+  push:
     branches: [main]
 jobs:
   build:

@@ -30,7 +30,9 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: 'production'
+      url: ${{ vars.PRODUCTION_URL }}
     needs: build
     steps:
       - uses: actions/checkout@v4

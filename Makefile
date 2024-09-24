@@ -12,7 +12,7 @@ test:
 lint: prettier lint-eslint lint-stylelint
 
 lint-eslint:
-	$(RUNNER) eslint . --ext .js,.jsx,.ts,.tsx,.vue
+	$(RUNNER) eslint .
 
 lint-stylelint:
 	$(RUNNER) stylelint "**/*.{css,vue,html}"

@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.657.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
     "@types/node": "^22.6.1",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
@@ -25,6 +27,7 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.28.0",
+    "globals": "^15.9.0",
     "jsdom": "^25.0.1",
     "postcss": "^8.4.47",
     "postcss-html": "^1.7.0",

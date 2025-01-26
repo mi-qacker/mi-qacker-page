@@ -6,13 +6,38 @@ type Contact = {
 	name: string;
 	link: string;
 	category: 'social' | 'messenger';
+	icon: string;
 };
 
 const contacts = ref<Contact[]>([
-	{id: 'github', name: 'GitHub', category: 'social', link: 'https://github.com/mi-qacker'},
-	{id: 'linkedin', name: 'LinkedIn', category: 'social', link: 'https://www.linkedin.com/in/matthewkalinin'},
-	{id: 'telegram', name: 'Telegram channel', category: 'social', link: 'https://t.me/+VIbMx3rTvFozYWIy'},
-	{id: 'telegram', name: 'Telegram', category: 'messenger', link: 'https://t.me/matthewkalinin'},
+	{
+		id: 'github',
+		name: 'GitHub',
+		category: 'social',
+		link: 'https://github.com/mi-qacker',
+		icon: '/icons/github.svg',
+	},
+	{
+		id: 'linkedin',
+		name: 'LinkedIn',
+		category: 'social',
+		link: 'https://www.linkedin.com/in/matthewkalinin',
+		icon: '/icons/linkedin.svg',
+	},
+	{
+		id: 'telegram',
+		name: 'Telegram channel',
+		category: 'social',
+		link: 'https://t.me/+VIbMx3rTvFozYWIy',
+		icon: '/icons/telegram.svg',
+	},
+	{
+		id: 'telegram',
+		name: 'Telegram',
+		category: 'messenger',
+		link: 'https://t.me/matthewkalinin',
+		icon: '/icons/telegram.svg',
+	},
 ]);
 const social = computed(() => contacts.value.filter(({category}) => category === 'social'));
 const messenger = computed(() => contacts.value.filter(({category}) => category === 'messenger'));
@@ -33,11 +58,7 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 		<h3 class="my-2 text-lg">Social network:</h3>
 		<ul class="flex list-inside gap-2">
 			<li class="ml-2 flex items-center gap-2" v-for="contact in social" :key="contact.id">
-				<img
-					:src="`https://cdn.simpleicons.org/${contact.id}/white`"
-					:alt="`${contact.id} logo`"
-					height="24"
-					width="24" />
+				<img :src="contact.icon" :alt="`${contact.id} logo`" height="24" width="24" />
 				<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 			</li>
 		</ul>
@@ -45,11 +66,7 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 		<h3 class="my-2 text-lg">Messengers:</h3>
 		<ul class="flex list-inside gap-2">
 			<li class="ml-2 flex items-center gap-2" v-for="contact in messenger" :key="contact.id">
-				<img
-					:src="`https://cdn.simpleicons.org/${contact.id}/white`"
-					:alt="`${contact.id} logo`"
-					height="24"
-					width="24" />
+				<img :src="contact.icon" :alt="`${contact.id} logo`" height="24" width="24" />
 				<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 			</li>
 		</ul>

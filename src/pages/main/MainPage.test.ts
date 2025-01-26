@@ -1,6 +1,6 @@
 import {mount} from '@vue/test-utils';
 import MainPage from './MainPage.vue';
-import {mountProps} from '../tests/utils';
+import {mountProps} from '../../tests/utils';
 
 describe('MainPage component', () => {
 	it('mount without errors', async () => {

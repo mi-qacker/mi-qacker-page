@@ -1,6 +1,6 @@
 import {mount} from '@vue/test-utils';
 import ContactsPage from './ContactsPage.vue';
-import {mountProps} from '../tests/utils';
+import {mountProps} from '../../tests/utils';
 
 describe('ContactsPage component', () => {
 	it('mount without errors', async () => {

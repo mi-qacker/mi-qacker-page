@@ -44,7 +44,7 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 		<template v-if="social.length > 0">
 			<h3 class="my-2 text-lg">Social network:</h3>
 			<ul class="flex list-inside gap-2">
-				<li class="ml-2 flex items-center gap-2" v-for="contact in social" :key="contact.id">
+				<li v-for="contact in social" :key="contact.id" class="ml-2 flex items-center gap-2">
 					<img :src="contact.icon" :alt="`${contact.id} logo`" height="24" width="24" />
 					<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 				</li>
@@ -54,7 +54,7 @@ const messenger = computed(() => contacts.value.filter(({category}) => category 
 		<template v-if="messenger.length > 0">
 			<h3 class="my-2 text-lg">Messengers:</h3>
 			<ul class="flex list-inside gap-2">
-				<li class="ml-2 flex items-center gap-2" v-for="contact in messenger" :key="contact.id">
+				<li v-for="contact in messenger" :key="contact.id" class="ml-2 flex items-center gap-2">
 					<img :src="contact.icon" :alt="`${contact.id} logo`" height="24" width="24" />
 					<a class="underline" :href="contact.link" target="_blank">{{ contact.name }}</a>
 				</li>

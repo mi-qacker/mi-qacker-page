@@ -1,49 +1,33 @@
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import vue from 'eslint-plugin-vue';
-import globals from 'globals';
-import path from 'node:path';
-import {fileURLToPath} from 'node:url';
 import js from '@eslint/js';
-import {FlatCompat} from '@eslint/eslintrc';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-	baseDirectory: __dirname,
-	recommendedConfig: js.configs.recommended,
-	allConfig: js.configs.all,
-});
+import typescriptEslint from 'typescript-eslint';
+import pluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
 	{
 		ignores: ['**/dist', '**/public', '**/node_modules'],
 	},
-	...compat.extends(
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:vue/vue3-essential',
-		'prettier',
-	),
+	js.configs.recommended,
+	...typescriptEslint.configs.recommended,
+	...pluginVue.configs['flat/recommended'],
 	{
-		plugins: {
-			'@typescript-eslint': typescriptEslint,
-			vue,
-		},
-
+		files: ['**/*.{js,ts,vue}'],
 		languageOptions: {
+			ecmaVersion: 'latest',
+			sourceType: 'module',
 			globals: {
 				...globals.browser,
 				...globals.node,
 			},
-
-			ecmaVersion: 'latest',
-			sourceType: 'module',
-
 			parserOptions: {
 				parser: '@typescript-eslint/parser',
 			},
 		},
-
-		rules: {},
+		rules: {
+			// override/add rules settings here, such as:
+			// 'vue/no-unused-vars': 'error'
+		},
 	},
+	eslintConfigPrettier,
 ];

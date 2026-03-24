@@ -43,10 +43,5 @@
     "vitest": "^4.0.18",
     "vue-eslint-parser": "^10.4.0",
     "vue-tsc": "^3.2.4"
-  },
-  "resolutions": {
-    "strip-ansi": "6.0.1",
-    "string-width": "4.2.2",
-    "wrap-ansi": "7.0.0"
   }
 }

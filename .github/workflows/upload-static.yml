@@ -20,11 +20,11 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
       - name: Install dependencies
-        run: yarn
+        run: npm ci
       - name: Build
-        run: yarn build
+        run: npm run build
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v7
         with:
@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
-          cache: 'yarn'
+          cache: 'npm'
       - name: Download artifact from build job
         uses: actions/download-artifact@v8
         with:

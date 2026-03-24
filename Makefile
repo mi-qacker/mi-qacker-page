@@ -1,21 +1,19 @@
-RUNNER := yarn
-
 dev:
-	$(RUNNER) dev
+	npm run dev
 
 buid:
-	$(RUNNER) build
+	npm run build
 
 test:
-	$(RUNNER) vitest run
+	npx vitest run
 
 lint: prettier lint-eslint lint-stylelint
 
 lint-eslint:
-	$(RUNNER) eslint .
+	npx eslint .
 
 lint-stylelint:
-	$(RUNNER) stylelint "**/*.{css,vue,html}"
+	npx stylelint "**/*.{css,vue,html}"
 
 prettier:
-	$(RUNNER) prettier . --check
+	npx prettier . --check
